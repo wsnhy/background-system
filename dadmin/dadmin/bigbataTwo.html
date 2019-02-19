@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Two</title>
+    <style>
+        html,body{
+            height: 100%;
+        }
+        body{
+            margin: 0;
+            padding: 0;
+        }
+        h3{
+            text-align: center;
+            line-height: 30px;
+        }
+        #chart_map{
+            height: 100%;
+        }
+    </style>
+</head>
+<body>
+    <h3>湖北省地图</h3>
+    <div id="chart_map"></div>
+</body>
+</html>
+<script src="js/jquery-1.11.0.min.js"></script>
+<script src="js/echarts.js"></script>
+<script src="js/bmap.js"></script>
+<script>
+    var myChart = echarts.init(document.getElementById('chart_map'));
+
+    myChart.showLoading();
+    $.get('hubei.json', function (geoJson) {
+        myChart.hideLoading();
+        echarts.registerMap('hubei', geoJson);
+
+
+        myChart.setOption(option = {
+            visualMap: {
+                min: 0,
+                max: 500,
+                show: false,
+                splitNumber: 5,
+                inRange: {
+                    color: ['#d94e5d', '#eac736', '#50a3ba'].reverse()
+                },
+                textStyle: {
+                    color: '#fff'
+                }
+            },
+            series: [{
+                type: 'map',
+                mapType: 'hubei',
+                coordinateSystem: 'geo',
+                itemStyle: {
+                    normal: {
+                        areaColor: '#40458e',
+                        borderWidth: 2
+                    },
+                    emphasis: {
+                        borderColor: '#f90',
+                        areaColor: '#40458e'
+                    }
+                },
+                left:'20%',
+                top:'5%'
+            }]
+        });
+    });
+</script>

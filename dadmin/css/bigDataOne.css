@@ -1,0 +1,69 @@
+body,div,p,ul,ol,dl,dd,h1,h2,h3,h4,h5,h6,td,input,select,textarea,figure{
+    margin: 0;
+    padding: 0;
+}
+html,body{
+    height: 100%;
+}
+body{
+    background: url(../img/bigdata_bg.jpg)no-repeat;
+    background-size: cover;
+    font-family: "Open Sans", sans-serif;
+    padding: 3px 30px;
+}
+a{
+    text-decoration: none;
+}
+a:hover{
+    text-decoration: none;
+}
+li{
+    list-style:none;
+}
+img{
+    border:none;
+}
+
+.h3{
+    text-align: center;
+    font-size: 18px;
+    color: #75c1cc;
+    padding: 10px 0;
+}
+.chart{
+    width: 301px;
+    height: auto;
+    background: url(../img/chart_bg1.png)no-repeat;
+}
+.chart h5{
+    width: 20%;
+    font-size: 14px;
+    padding: 3px 20px;
+    text-align: center;
+    color: #81bedc;
+    background: rgba(16,92,152,0.3);
+    border-radius: 10px;
+    margin: 0 auto;
+}
+.chart_map{
+    width: 610px;
+    height: 460px;
+    padding: 15px 0;
+    margin: 0 30px;
+    float: left;
+}
+.bar_chart1{
+    float: left;
+}
+.bar_chart2{
+    margin: 20px 0;
+}
+.chart_list{
+    float: left;
+}
+.chart_list_mid{
+    margin-right: 25px;
+}
+.chart .last_h5{
+    width: 50%;
+}
